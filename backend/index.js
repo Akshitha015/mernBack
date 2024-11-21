@@ -1,12 +1,14 @@
 const connectToMongo = require('./db'); // Import the function from db.js
 const express = require('express');
-const cors = require('cors');
+
 
 const app = express();
 const port = 5000;
 
 // Middleware
-app.use(cors());
+const cors = require("cors");
+app.use(cors({ origin: "https://inotebookfront-u9zm.onrender.com" })); // Replace with your frontend URL
+
 app.use(express.json()); // Parse JSON
 
 // Routes
